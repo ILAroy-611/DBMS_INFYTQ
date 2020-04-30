@@ -1,0 +1,1 @@
+SELECT Descr,Price FROM ITEM WHERE Descr='500GB Hard disk' OR Descr='320GB Hard disk'
