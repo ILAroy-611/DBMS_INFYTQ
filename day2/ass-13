@@ -1,0 +1,7 @@
+CREATE TABLE(
+  HouseNo	NUMBER,
+  Street	VARCHAR2(30),
+  city	VARCHAR2(20) REFERENCES City(city)
+  zip	NUMBER(6) CHECK(ZIP>=0),
+  state	VARCHAR2(5),
+  CONSTRAINT pk_address PRIMARY KEY(HouseNo,Street,city));
