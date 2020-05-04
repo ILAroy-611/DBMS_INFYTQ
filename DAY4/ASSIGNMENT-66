@@ -1,0 +1,2 @@
+
+SELECT SUM(QuotedPrice) TOTALPRICE FROM Quotation where QStatus = 'Accepted' AND TO_CHAR(QDate,'Mon') = 'Jun'
