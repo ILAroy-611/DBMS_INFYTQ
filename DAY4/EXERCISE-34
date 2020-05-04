@@ -1,0 +1,2 @@
+
+SELECT CONCAT(CONCAT(SNAME, ' is from '),LOCATION)  "RESULT" FROM SalesMan
