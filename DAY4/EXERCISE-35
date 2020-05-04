@@ -1,0 +1,2 @@
+
+SELECT TO_CHAR(TO_DATE('Jan/10/2015','mm/dd/yyyy'),'Month') "MONTH", TO_NUMBER('2,50,000', '9,99,999') "AMOUNT" FROM DUAL
