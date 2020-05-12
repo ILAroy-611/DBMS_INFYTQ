@@ -1,0 +1,5 @@
+select i.itemcode,q.sname,sum(o.qtyordered) TOTALQUANTITY 
+  from item i inner join quotation q on i.itemcode=q.itemcode 
+    inner join orders o on q.quotationid=o.quotationid 
+      group by i.itemcode,q.sname 
+        having sum(o.qtyordered) >100
