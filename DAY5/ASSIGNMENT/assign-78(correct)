@@ -1,0 +1,4 @@
+select nvl(e.empname,'No Manager') EMPNAME, i.category, sum(rs.qtyavailable) TOTALQUANTITY 
+  from empdetails e right outer join retailoutlet ro on ro.managerid=e.empid 
+    inner join retailstock rs on rs.roid=ro.roid inner join item i on rs.itemcode=i.itemcode 
+      group by nvl(e.empname,'No Manager'), i.category
