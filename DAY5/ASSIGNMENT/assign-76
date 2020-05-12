@@ -1,0 +1,4 @@
+select i.itemcode,i.descr 
+  from item i inner join quotation q on i.price=q.quotedprice 
+    group by i.itemcode,i.descr 
+      having count(q.quotationid)>1
