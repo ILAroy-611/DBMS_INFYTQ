@@ -1,0 +1,1 @@
+select c.custid "Customer Id",c.custname "Customer Name" from customer c inner join empdetails d on d.empname=c.custname and c.emailid=d.emailid
