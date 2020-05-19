@@ -1,0 +1,1 @@
+select sname from salesman sm where sm.sid not in (select s.sid from sale s where s.sid=sm.sid)
