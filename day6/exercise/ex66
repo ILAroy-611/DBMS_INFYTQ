@@ -1,0 +1,8 @@
+select sm1.sid,sname,location from salesman sm1 inner join  sale s1 on s1.sid=sm1.sid 
+  inner join saledetail sd1 on sd1.saleid=s1.saleid 
+    inner join product p1 on p1.prodid=sd1.prodid 
+      group by sm1.sid,sname,location having sum(price*quantity*(1-discount/100)) >
+      (
+        select avg(sum(price*quantity*(1-discount/100))) from salesman sm inner join  sale s on s.sid=sm.sid 
+          inner join saledetail sd on sd.saleid=s.saleid inner join product p on p.prodid=sd.prodid 
+            where sm1.location=sm.location group by s.sid)
