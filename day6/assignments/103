@@ -1,0 +1,4 @@
+select billid,itemcode 
+  from purchasebill 
+    where billamount <=(
+      select avg(billamount) from purchasebill)
