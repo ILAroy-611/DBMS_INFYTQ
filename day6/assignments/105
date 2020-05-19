@@ -1,0 +1,3 @@
+select e.empid,e.empname,e.designation,e.salary 
+  from empdetails e 
+    where e.salary in (select max(e1.salary) from empdetails e1  where e.designation=e1.designation  )
