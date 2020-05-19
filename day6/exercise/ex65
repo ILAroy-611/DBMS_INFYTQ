@@ -1,0 +1,2 @@
+select sm.sname from salesman sm where sm.sid in (
+select s.sid from sale s where to_char(s.sldate,'mon')='jun' and sm.sid=s.sid)
