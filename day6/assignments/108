@@ -1,0 +1,2 @@
+select custid,custname from customer where custid in (
+select custid from purchasebill )
