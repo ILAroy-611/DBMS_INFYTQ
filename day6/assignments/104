@@ -1,0 +1,4 @@
+select distinct q.sname,i.itemcode,i.descr 
+  from quotation q inner join item i on i.itemcode=q.itemcode
+    where q.quotedprice < (
+      select max(quotedprice) from quotation q1 where q1.itemcode=q.itemcode AND q.sname <> q1.sname )
