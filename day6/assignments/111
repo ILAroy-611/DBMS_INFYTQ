@@ -1,0 +1,1 @@
+update emp e set sal = (select avg(sal) from emp e1 where e.deptno=e1.deptno)
