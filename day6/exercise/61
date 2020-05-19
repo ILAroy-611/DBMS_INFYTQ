@@ -1,0 +1,5 @@
+select i.prodid,i.pdesc from product i where i.prodid in 
+(
+select prodid from saledetail group by prodid having sum(quantity)=
+(
+select min(sum(quantity)) from saledetail group by prodid))
