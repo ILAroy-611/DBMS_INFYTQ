@@ -1,0 +1,3 @@
+SELECT EmpId, EmpName, Designation 
+FROM EmpDetails where empid in (select managerid from RetailOutlet 
+)
