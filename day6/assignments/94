@@ -1,0 +1,6 @@
+select distinct i.itemcode,i.itemtype,i.descr,i.category 
+  from item i where i.itemcode in
+    (
+      select q.itemcode from quotation q group by q.itemcode having min(q.quotedprice)
+        =(
+          select min(min(Q1.QUOTEDPRICE)) from quotation q1 where q1.qstatus in ('Rejected') group by q1.itemcode ))
