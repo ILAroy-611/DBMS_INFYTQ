@@ -1,0 +1,3 @@
+SELECT E.ENAME,E.JOB FROM EMP E INNER JOIN EMPVEHICLE EV ON E.EMPNO=EV.EMPNO
+---alter solution--
+SELECT E.ENAME,E.JOB FROM EMP E where e.empno in (select empno from empvehicle)
